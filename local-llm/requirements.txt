@@ -1,0 +1,9 @@
+ollama
+langchain
+pypdf
+colorama
+pynput
+# llm_cost_estimation
+llama_index
+langchain_community
+langchain_experimental

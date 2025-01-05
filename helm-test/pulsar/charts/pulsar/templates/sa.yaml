@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ServiceAccount
+
+# Name: {{ .Values.name | default "tea" | quote }}
+
+{{ if .Values.name }}  
+Name: {{ .Values.name }}
+{{ else }}
+Name: "asdas"
+{{ end }}
+
+metadata:
+  annotations:
+    {{ if .Values.ionce.parametersetName }}
+      bluenose.infor.com/ionceps: {{ .Values.ionce.parametersetName }}
+    {{ else }}   
+      bluenose.infor.com/ionceps: arn:infor:faro::{{ .Values.ionce.accountId }}:parameterset:{{ .Values.productCode }}-{{ .Values.installId }}-ifs-integration-ionce
+    {{ end }}  
